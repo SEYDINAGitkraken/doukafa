@@ -1,0 +1,55 @@
+
+.register{
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    width: 420px;
+    padding: space(3);
+    margin: auto;
+    background-color: var(--header-background);
+    @extend %shadon;
+    margin-bottom: space(8);
+    margin-top: space(8);
+    font-size: em(15);
+    .text-info{
+        font-weight: 600;
+    }
+}
+
+.register-footer{
+    border-top: 1px solid var(--border);
+    margin-top: space(2);
+}
+
+.register-title{
+    font-size: em(18);
+    font-weight: 600;
+}
+
+.register-footer{
+    padding-top: space(2);
+}
+
+.register-btn{
+    margin-top: space(2);
+}
+
+.register-connected{
+    color: var(--contrast);
+    cursor: pointer;
+}
+
+.register-connected:hover{
+    color: var(--contrast25);
+}
+
+.register-compt{
+    margin-bottom: space(1);
+}
+
+.cashedOnglet{
+    display: none;
+}
+
+.affichOnglet{
+    display: initial;
+}

@@ -1,0 +1,110 @@
+.asidBar{
+    padding-top: space(2);
+    padding-bottom: space(1);
+}
+.asid-logo{
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: space(1);
+    @include down(1024){
+        width: 60px;
+    }
+}
+
+.asid-nav{
+    margin-top: space(2);
+}
+
+.nav-title{
+    border-top: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+    font-size: em(10);
+    text-transform: uppercase;
+    padding-top: space(.5);
+    padding-bottom: space(.5);
+    padding-left: space(2);
+    padding-right: space(2);
+    @include down(1024){
+        padding-top: space(1.5);
+        padding-bottom: space(1.5);
+    }
+}
+.asid-items{
+    margin-top: space(1);
+}
+
+.asid-link{
+    display: block;
+    padding-left: space(2);
+    padding-right: space(2);
+    padding-top: space(2);
+    padding-bottom: space(2);
+    color: #dde5f7;
+    cursor: pointer;
+    transition: var(--during);
+    @include down(1024){
+        width: 100%;
+        padding-left: space(3);
+    }
+}
+
+.asid-link:hover{
+    background: var(--contrast-background-default);
+    color: #f1f4fa;
+}
+
+.asid-text{
+    margin-left: space(1);
+    display: initial;
+    @include down(1024){
+        display: none;
+    }
+}
+
+.color-default{
+    color: rgb(53, 40, 238);
+}
+
+.color-black{
+    color: rgb(2, 2, 19);
+}
+
+.color-white{
+    color: rgb(228, 233, 238);
+}
+
+.active-nav{
+    background: var(--contrast-background-default);
+    color: #f1f4fa;
+}
+
+body.white{
+    .nav-title{
+        border-top: 1px solid var(--border-white);
+        border-bottom: 1px solid var(--border-white);
+    }
+
+    .active-nav{
+        background: var(--contrast-background-white);
+        color: var(--contrast-white);
+    }
+    .asid-link{
+        color: var(--color-white);
+    }
+    .color-default{
+        color: rgb(53, 40, 238);
+    }
+    
+    .color-black{
+        color: rgb(2, 2, 19);
+    }
+    
+    .color-white{
+        color: rgb(228, 233, 238);
+    }
+    .asid-link:hover{
+        background: var(--contrast-background-white);
+        color: var(--contrast-white);
+    }
+}

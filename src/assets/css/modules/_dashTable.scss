@@ -1,0 +1,30 @@
+.listing-wrap{
+}
+.dash-table{
+    width: 100%;
+    text-align: center;
+    td, th{
+        padding-top: space(1);
+        padding-bottom: space(1);
+    }
+    .title{
+        font-size: em(16);
+    }
+}
+.table-tr{
+    width: 100%;
+}
+th{
+    background-color: #f3f3f3;
+    color: rgb(26, 26, 26);
+}
+tr{
+    background-color: #dfdfdf;
+}
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.tab-check{
+    color: rgba(20, 201, 44, 0.863);
+}

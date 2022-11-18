@@ -1,0 +1,21 @@
+.head-page{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include down(1024){
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.head-subtitle{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: em(10);
+    color: var(--border);
+}
+
+.head-title{
+    font-size: em(18);
+}

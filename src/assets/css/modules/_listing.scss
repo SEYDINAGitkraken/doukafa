@@ -1,0 +1,207 @@
+.listing{
+    padding-top: space(1);
+    padding-bottom: space(1);
+}
+.listing-head,
+.listing-foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: space(1);
+    padding-right: space(1);
+}
+
+.listing-select{
+    margin-left: space(1);
+    background-color: var(--background-cart-default);
+    color: var(--color-cart-default);
+    border: 1px solid var(--border-default);
+    font-size: em(12);
+    border-radius: 3px;
+    width: 80px;
+    transition: var(--during);
+    padding-top: space(.3);
+    padding-bottom: space(.3);
+}
+
+.listing-select:hover{
+    box-shadow: 0px 1px 5px 0px rgba(rgb(10, 15, 31), .4);
+}
+
+.listing-group{
+    padding-top: space(.5);
+    padding-bottom: space(.5);
+    border: 1px solid var(--border-default);
+    svg{
+        height: 15px;
+        width: 15px;
+    }
+}
+
+.listing-input{
+    border: none;
+}
+
+.listing-body{
+    margin-top: space(2);
+    margin-bottom: space(2);
+}
+
+.listing-img{
+    width: 120px;
+    margin: auto;
+}
+
+.listing-table{
+    width: 100%;
+    text-align: center;
+    font-size: em(14);
+}
+
+.listing-thead{
+    border-top: 1px solid var(--border-default);
+    tr{
+        border-bottom: 1px solid var(--border-default);
+    }
+}
+
+.listing-tbody{
+    border-bottom: 1px solid var(--border-default);
+    td{
+        padding-top: space(1);
+        padding-bottom: space(1);
+        border: 1px solid var(--border-default);
+        vertical-align: middle;
+    }
+    td:last-child{
+        border-right: none;
+    }
+    td:first-child{
+        border-left: none;
+    }
+    
+}
+
+.listing-link{
+    padding: space(.8) space(.5);
+}
+
+.listing-edit{
+    border: 1px solid var(--border-default);
+    transition: color var(--during);
+}
+
+.listing-edit:hover{
+    color: var(--green);
+}
+
+.listing-add{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-left: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+    border-top: 1px solid var(--border-default);
+    transition: color var(--during);
+}
+.listing-add:hover{
+    color: var(--yellow);
+}
+.listing-del{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+    border-top: 1px solid var(--border-default);
+    transition: color var(--during);
+}
+.listing-del:hover{
+    color: var(--red);
+}
+.foot-middle{
+    display: flex;
+    flex-direction: row;
+}
+
+.listing-rang{
+    border: 1px solid var(--border-default);
+    width: 60px;
+    margin-left: space(.5);
+    margin-right: space(.5);
+    border-radius: 3px;
+}
+.listing-rang:hover,
+.listing-rang:focus-within{
+    box-shadow: 0px 1px 5px 0px rgba(rgb(10, 15, 31), .4);
+}
+
+.btn-listing{
+    background: rgba(226, 231, 247, 0.932);
+    transition: var(--during);
+}
+
+.btn-listing:hover{
+    background-color:rgba(123, 149, 236, 0.932) ;
+}
+
+.text-danger{
+    color: var(--red);
+}
+
+.text-primary{
+    color: var(--contrast);
+}
+
+.text-success{
+    color: var(--yellow);
+}
+
+.text-complete{
+    color: var(--green);
+}
+
+body.white{
+    .listing-select{
+        background-color: var(--background-cart-white);
+        color: var(--color-cart-white);
+        border: 1px solid var(--border-white);
+    }
+    .listing-add{
+        border-left: 1px solid var(--border-white);
+        border-bottom: 1px solid var(--border-white);
+        border-top: 1px solid var(--border-white);   
+    }
+    .listing-group{
+        border: 1px solid var(--border-white);
+    }
+    .listing-thead{
+        border-top: 1px solid var(--border-white);
+        tr{
+            border-bottom: 1px solid var(--border-white);
+        }
+    }
+    
+    .listing-tbody{
+        border-bottom: 1px solid var(--border-white);
+        td{
+            border: 1px solid var(--border-white);
+        }
+        td:last-child{
+            border-right: none;
+        }
+        td:first-child{
+            border-left: none;
+        }
+    }
+
+    .listing-rang,
+    .listing-edit{
+        border: 1px solid var(--border-white);
+    }
+    .listing-del{
+        border-right: 1px solid var(--border-white);
+        border-bottom: 1px solid var(--border-white);
+        border-top: 1px solid var(--border-white);
+    }
+    
+}

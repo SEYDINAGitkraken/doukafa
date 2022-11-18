@@ -1,0 +1,14 @@
+.saleTotal{
+    
+}
+
+.saleTotal-prix{
+    height: calc(100% - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .dash-number{
+        font-size: em(34);
+    }
+}

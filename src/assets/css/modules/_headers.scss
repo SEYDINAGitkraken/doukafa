@@ -1,0 +1,198 @@
+.header{
+    @extend %container;
+    @extend %shadow;
+    background-color: rgb(255, 255, 255);
+    color: var(--color-cart-default);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head-item{
+    svg{
+        height: 15px;
+        width: 15px;
+    }
+}
+.logout{
+    cursor: pointer;
+}
+.head-notify{
+    display: flex;
+    flex-direction: row;
+    
+}
+.head-notif{
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    padding-top: space(2);
+    padding-bottom: space(2);
+    padding-left: space(2.5);
+    padding-right: space(2.5);
+    position: relative;
+    cursor: pointer;
+}
+
+.notif-number{
+    border-radius: 50%;
+    background-color: rgb(219, 31, 31);
+    padding-left: space(.8);
+    padding-right: space(.7);
+    padding-bottom: space(.1);
+    padding-top: space(.3);
+    font-size: em(8);
+    color: aliceblue;
+    z-index: 20;
+    position: absolute;
+    left: 35px;
+    top: 25px;
+}
+
+.notif-icon{
+    z-index: 15;
+    color: var(--border);
+    svg{
+        height: 25px;
+        width: 25px;
+    }
+}
+
+.head-user{
+    margin-left: space(2.5);
+}
+
+.head-picture{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.head-name{
+    font-size: em(11);
+    color: var(--border);
+    margin-left: space(1);
+    cursor: pointer;
+}
+
+.notif-toglle,
+.notif-togllethow{
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    font-size: em(12);
+    background-color: rgb(255, 255, 255);
+    color: var(--color-cart);
+    @extend %shadow;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    
+}
+
+.notif-toglle{
+    width: 380px;
+}
+.notif-togllethow{
+    width: 171px;
+}
+
+.notif-toggle-body{
+    padding: space(.5);
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    border-bottom: 1px solid var(--border);
+    transition: var(--during);
+}
+.notif-toggle-body:hover{
+    background-color: #0002;
+}
+.notives-img{
+    background-color: var(--border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    color: var(--color-cart);
+}
+
+.notif-toggle-foot{
+    padding: space(.5);
+    text-align: center;
+    color: #0006;
+    transition: var(--during);
+}
+.notif-toggle-foot:hover{
+    background-color: #0002;
+}
+
+.notives-title{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--color-cart);
+}
+
+.notif-toggle-foot:hover{
+    color: #000;
+}
+
+.notoggle{
+    display: none;
+    animation: slideOut;
+}
+
+.toggle{
+    display: initial;
+    animation: slideIn;
+}
+
+.head-notif-items{
+    margin-top: space(2);
+    
+}
+.head-notif-link{
+    display: block;
+    padding-left: space(1);
+    padding-right: space(1);
+    padding-right: space(1.5);
+    padding-bottom: space(1.5);
+    transition: var(--durring);
+    svg{
+        vertical-align: top;
+    }
+}
+
+.head-notif-link:hover{
+    color: #000;
+}
+
+.notif-togllethow-foot{
+    margin-bottom: space(1);
+    padding-left: space(1);
+    padding-right: space(1);
+    padding-top: space(1);
+    border-top: 1px solid var(--red);
+    color: var(--red);
+    a{
+        opacity: 0.8;
+        padding-left: space(.2);
+        transition: var(--during);
+    }
+    a:hover{
+        opacity: 1;
+    }
+}
+
+body.white{
+    .header{
+        background-color: var(--background-cart-white);
+        color: var(--color-cart-white);   
+    }
+    .notif-toglle,
+    .notif-togllethow{
+        background-color: #fff;
+    }
+}

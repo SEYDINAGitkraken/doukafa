@@ -1,0 +1,63 @@
+.user-header{
+    background-color: var(--header-background-inversed);
+    color: var(--header-background);
+}
+
+.head-logo{
+    width: 100px;
+}
+
+.head-toggle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .toggle-item + .toggle-item{
+        margin-left: space(3);
+    }
+}
+
+.toggle-item{
+    padding-left: space(1);
+    padding-right: space(1);
+}
+
+.toggle-link{
+    display: block;
+    padding-top: space(1.5);
+    padding-bottom: space(1.5);
+    opacity: 0.8;
+}
+
+.toggle-link:hover{
+    opacity: 1;
+}
+
+.toggle-connect{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: space(1);
+    line-height: 1.4;
+    font-size: em(12);
+}
+
+.toggle-profe{
+    background-color: var(--header-background);
+    padding: space(1) space(2);
+    border-radius: 5px;
+    font-weight: 500;
+    color: var(--contrast);
+}
+
+.toggle-profe:hover{
+    color: var(--contrast25);
+}
+
+.toggle-session{
+    cursor: pointer;
+    padding-top: space(2);
+    padding-bottom: space(2);
+}
+.toggle-session:hover{
+    background-color: #6b87f8;
+}
