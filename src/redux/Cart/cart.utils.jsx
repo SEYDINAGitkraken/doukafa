@@ -49,7 +49,8 @@ export const handleSubToCart = ({ prevItems, nextItem }) =>{
 export const handleQty = ({prevItems}) =>{
     let qty = 0
     prevItems.map(cartItem =>{
-        qty += cartItem.quantity
+        console.log(cartItem)
+        qty += Number(cartItem.quantity) ?? 0
     })
     return  qty
 }
@@ -57,7 +58,7 @@ export const handleQty = ({prevItems}) =>{
 export const handleCount = ({prevItems}) =>{
     let pri = 0
     prevItems.map(cartItem =>{
-        pri += cartItem.quantity*cartItem.price
+        pri += Number(cartItem.quantity*cartItem.price) ?? 0
     })
     return  pri
 }

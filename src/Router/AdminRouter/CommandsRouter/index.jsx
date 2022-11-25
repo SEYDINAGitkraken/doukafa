@@ -2,7 +2,8 @@ import React from "react";
 import { Route } from "react-router-dom";
 import MainLayout from "../../../layouts/MainLayout";
 import { AllCommandsPage, MenusOfDayPage, CommandCustomerPage } from "../../../pages/AdminPage/CommandsPage";
-import { COMMANDS, COMMAND_CUSTOMER, MENU_OF_DAY } from "../../../settings/constants";
+import CommandValidPage from "../../../pages/AdminPage/CommandsPage/CommandValidPage";
+import { COMMANDS, COMMAND_BOTH, COMMAND_CUSTOMER, MENU_OF_DAY } from "../../../settings/constants";
 
 
 const CommandsRouter = () => {
@@ -17,6 +18,9 @@ const CommandsRouter = () => {
             </Route>
             <Route path={COMMAND_CUSTOMER} exact>
               <MainLayout><CommandCustomerPage/></MainLayout>
+            </Route>
+            <Route path={COMMAND_BOTH} exact>
+              <MainLayout><CommandValidPage/></MainLayout>
             </Route>
         </>
     )

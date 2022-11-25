@@ -1,3 +1,7 @@
 .customer-both{
     @extend %container;
 }
+
+.customer-both-head{
+    padding: space(2);
+}
