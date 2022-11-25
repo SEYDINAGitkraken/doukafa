@@ -18,7 +18,10 @@ export const cartRecete = () => ({
     type: cartTypes.CART_RECETE
 })
 
-export const totalsCount = (cartCredentials) => ({
-    type: cartTypes.TOTALS_COUNT,
-    payload: cartCredentials
+export const totalsQty = () => ({
+    type: cartTypes.QUANTITY
+})
+
+export const totalsCount = () => ({
+    type: cartTypes.TOTALS_COUNT
 })

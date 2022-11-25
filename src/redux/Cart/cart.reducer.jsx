@@ -1,9 +1,10 @@
 import cartTypes from "./cart.types";
-import { handleAddToCart, handleCount } from "./cart.utils";
+import { handleAddToCart, handleCount, handleQty, handleSubToCart } from "./cart.utils";
 
 const INITIAL_STATE = {
     currentCart:[],
-    totals: 0
+    totals: 0,
+    quantity: 0
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -17,17 +18,32 @@ const cartReducer = (state = INITIAL_STATE, action) => {
                     nextItem: action.payload
                 }), 
             }
-        case cartTypes.TOTALS_COUNT:
-            console.log(action.payload)
+        case cartTypes.CART_DELETE_ONE:
             return {
                 ...state,
-                totals: state.totals
+                currentCart: handleSubToCart({
+                    prevItems: state.currentCart,
+                    nextItem: action.payload
+                }),
+            }
+        case cartTypes.QUANTITY:
+            return {
+                ...state,
+                quantity: handleQty({
+                    prevItems: state.currentCart
+                }), 
+            }
+        case cartTypes.TOTALS_COUNT:
+            return {
+                ...state,
+                totals: handleCount({
+                    prevItems: state.currentCart
+                })
             }
         case cartTypes.CART_RECETE:
             return {
                 ...state,
-                currentCart:[],
-                totals: 0
+                ...INITIAL_STATE
             }
     
         default:

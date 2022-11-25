@@ -104,10 +104,20 @@
     gap: space(.5);
     border-bottom: 1px solid var(--border);
     transition: var(--during);
+    position: relative;
 }
+
+.notif-toggle-price{
+    font-weight: 700;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+}
+
 .notif-toggle-body:hover{
     background-color: #0002;
 }
+
 .notives-img{
     display: flex;
     justify-content: center;

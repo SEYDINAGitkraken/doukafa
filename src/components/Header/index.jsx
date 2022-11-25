@@ -8,14 +8,20 @@ import img from "../../assets/images/ib.jpg"
 import tot from "../../assets/images/29.jpg"
 
 import { signOutUserStart } from "../../redux/User/user.action";
-import { useDispatch } from "react-redux";
-import { MENU_OF_DAY, PROFILE_SETTING } from "../../settings/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { COMMANDS, MENU_OF_DAY, PROFILE_SETTING } from "../../settings/constants";
 
+const mapState = ({cart}) => ({
+    currentCart: cart.currentCart,
+    quantity: cart.quantity
+})
 const Header = ()=>{
+
     const [search, setSearch] = useState('');
 
     const [toggle, setToggle] = useState(false);
     const [toggleThow, setToggleThow] = useState(false);
+    const { currentCart, quantity } = useSelector(mapState);
 
     const dispatch = useDispatch();
 
@@ -47,6 +53,25 @@ const Header = ()=>{
         dispatch(signOutUserStart())
     }
 
+    const handleThinkCart = () => {
+        let leng = currentCart.length > 3 ? 3: currentCart.length
+        for (let i = 0; i < leng; i++) {
+            return currentCart.map(c=>{
+                return <div className="notif-toggle-body" key={c.id}>
+                    <div className="notives-img">
+                        <img src={tot} alt="" />
+                    </div>
+                    <div>
+                        <h3 className="notives-title">Tot</h3>
+                        <p>Your website's active users count increased by <span className={handleLevel('28%')}>28%</span> in the last week. Great job!</p>
+                    </div>
+                    <div className="notif-toggle-price">{c.price} fr</div>
+            </div>
+            })
+            
+        }
+    }
+
     return(
         <header className="header">
             <div className="head-item">
@@ -55,28 +80,15 @@ const Header = ()=>{
             <div className="head-item head-notify" >
                 <div className="head-notif" onClick={handleToggleThow}>
                     <span className="notif-icon"><Icon name="panier"/></span>
-                    <span className="notif-number">3</span>
+                    <span className="notif-number">{quantity}</span>
                     <div className={ toggleThow ? "notif-toglle toggle": "notif-toglle notoggle"}>
-                        <div className="notif-toggle-body">
-                            <div className="notives-img">
-                            <img src={tot} alt="" />
-                            </div>
-                            <div>
-                                <h3 className="notives-title">Tot</h3>
-                                <p>Your website's active users count increased by <span className={handleLevel('28%')}>28%</span> in the last week. Great job!</p>
-                            </div>
-                        </div>
-                        <div className="notif-toggle-body">
-                            <div className="notives-img">
-                                <img src={tot} alt="" />
-                            </div>
-                            <div>
-                                <h3 className="notives-title">Tot</h3>
-                                <p>Your website's active users count increased by <span className={handleLevel('68%')}>68%</span> in the last week. Great job!</p>
-                            </div>
-                        </div>
+                        {currentCart && (
+                            <>
+                                {handleThinkCart()}
+                            </>
+                        )}
                         <div className="notif-toggle-foot">
-                            <Link to="" className="btn-notives">View all notifications</Link>
+                            <Link to={COMMANDS} className="btn-notives">View all notifications</Link>
                         </div>
                     </div>
                 </div>

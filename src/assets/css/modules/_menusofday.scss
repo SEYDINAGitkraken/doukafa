@@ -99,6 +99,57 @@
     border-bottom: 2px solid var(--red);
 }
 
+.command-foot{
+    div+div{
+        margin-right: 8px;
+    }
+}
+
+.command-price{
+    font-weight: 700;
+}
+
+.command-cart{
+    border-radius: 10px;
+    background: var(--red);
+    position: relative;
+    width: 32px;
+    height: 32px;
+    padding-top: 6px;
+    padding-right: 4px;
+    margin-left: 35px;
+    margin-bottom: space(1);
+    cursor: pointer;
+    svg{
+        color: #740606;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) + 1s;
+    }
+    span{
+        color: var(--background);
+        font-size: em(24);
+        font-weight: 700;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) + 1s;
+        position: absolute;
+        right: 2px;
+        top: 8px;
+    }
+}
+
+.command-cart:hover{
+    svg{
+        color: var(--background);
+    }
+    span{
+        color: #740606;
+    }
+}
+.command-sub{
+    span{
+        right: 5px;
+        top: 6px;
+    }
+}
+
 .menusofday-iscontent{
     display: initial;
     padding: space(2);

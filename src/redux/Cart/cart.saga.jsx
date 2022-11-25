@@ -1,15 +1,27 @@
 import { all, call, put, takeLatest } from "redux-saga/effects"
-import { cartAddOne, totalsCount } from "./cart.action"
+import { cartAddOne, cartDeleteOne, totalsCount, totalsQty } from "./cart.action"
 import cartTypes from "./cart.types"
 
 
-
-export function* cartAdding({payload:{cartCredentials}}){
-    const cart = cartCredentials
-    console.log(cart)
+export function* cartSub({payload}){
     try {
-        yield put(cartAddOne(cart))
-        // yield put(totalsCount(cart))
+        put(cartDeleteOne(payload))
+        yield put(totalsQty())
+        yield put(totalsCount())
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export function* onCartSub(){
+    yield takeLatest(cartTypes.CART_DELETE_ONE, cartSub)
+}
+
+export function* cartAdding({payload}){
+    try {
+        put(cartAddOne(payload))
+        yield put(totalsQty())
+        yield put(totalsCount())
     } catch (error) {
         console.log(error)
     }
@@ -21,6 +33,7 @@ export function* onCartAdding(){
 
 export default function* cartSaga(){
     yield all([
-        call(onCartAdding)
+        call(onCartAdding),
+        call(onCartSub)
     ])
 }

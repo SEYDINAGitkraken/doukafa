@@ -14,22 +14,22 @@ const MenusOfDay = () => {
     const data = [
         {
             'id':1,
-            'price':20,
+            'price':'20',
             'name':'menu1'
         },
         {
             'id':2,
-            'price':25,
+            'price':'25',
             'name':'menu2'
         },
         {
             'id':3,
-            'price':10,
+            'price':'10',
             'name':'menu3'
         },
         {
             'id':4,
-            'price':5,
+            'price':'5',
             'name':'menu4'
         }
 
@@ -83,7 +83,7 @@ const MenusOfDay = () => {
                             </div>
                             <div className="menusofday-item-foot">
                                 <div className="menusofday-price">{formatToMoney(Number(50))} fr</div>
-                                <div className="menusofday-cart">
+                                <div className="menusofday-cart" onClick={() => {handleAddCart(2)}}>
                                     <Icon name="cart"/>
                                     <span>+</span>
                                 </div>
@@ -99,7 +99,7 @@ const MenusOfDay = () => {
                             </div>
                             <div className="menusofday-item-foot">
                                 <div className="menusofday-price">{formatToMoney(Number(50))} fr</div>
-                                <div className="menusofday-cart">
+                                <div className="menusofday-cart" onClick={() => {handleAddCart(3)}}>
                                     <Icon name="cart"/>
                                     <span>+</span>
                                 </div>
