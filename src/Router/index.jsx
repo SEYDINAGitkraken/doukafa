@@ -1,15 +1,12 @@
 import React from "react";
-import { CustomerRouter, DashRouter, MenuRouter, SaleRouter } from "./AdminRouter";
 import { LoginRouter } from "./UserRouter";
+import AdminRouter from './AdminRouter'
 
 const Router = () =>{
     return (
         <>
             <LoginRouter/>
-            <DashRouter/>
-            <CustomerRouter/>
-            <SaleRouter/>
-            <MenuRouter/>
+            <AdminRouter/>
         </>
     );
 }

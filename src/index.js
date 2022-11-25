@@ -5,15 +5,12 @@ import {store, persistor} from './redux/createStore';
 import {PersistGate} from "redux-persist/integration/react";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import './assets/css/app.scss';
-
 const Loading =()=>{
   return (
     <div>loading...</div>
   )
 }
-
 
 createRoot.render(
   <React.StrictMode>

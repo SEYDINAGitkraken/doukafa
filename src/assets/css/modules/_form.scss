@@ -233,13 +233,17 @@ input{
     float: right;
     background-color: var(--background);
     padding-bottom: space(2);
-    transform: translateY(-50px);
-    margin: auto;
+    transform: translateY(-48px);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    
     form{
         margin-left: space(1);
         width: 200px;
     }
+}
+
+.form-thow::after{
+    clear: both;
+    display: table;
+    width: 100%;
 }

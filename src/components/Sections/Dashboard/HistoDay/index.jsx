@@ -28,16 +28,16 @@ const HistoDay = () => {
         labels: labels,
         datasets: [
             {
-              label: 'Low',
-              backgroundColor: 'rgb(50, 110, 240)', // green
+              label: 'Restant',
+              backgroundColor: 'rgb(50, 110, 240)',
               data: [10, 3, 4, 0, 5],
               borderRadius: 0,
               borderSkipped: false,
               maxBarThickness: 16,
             },
             {
-              label: 'Moderate',
-              backgroundColor: 'rgb(164, 190, 247)', // yellow
+              label: 'Vente',
+              backgroundColor: 'rgb(164, 190, 247)',
               data: [5, 7, 8, 10, 5],
               borderRadius: {
                 topLeft:5,
@@ -54,12 +54,6 @@ const HistoDay = () => {
         strokeColor: 'rgba(98, 20, 201, 0.119)',
         type: 'bar',
         data: data,
-        plugins: {
-            title: {
-              display: true,
-              text: 'Chart.js Bar Chart - Stacked'
-            },
-          },
           responsive: true,
           interaction: {
             intersect: false,

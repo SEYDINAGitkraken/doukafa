@@ -1,7 +1,8 @@
 .form-newuser{
     display: grid;
     grid-template-columns: 1fr 240px;
-    grid-gap: space(3);
+    gap: space(3);
+    width: 100%;
 }
 .form-content,
 .newuser-item{
@@ -73,6 +74,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-top: space(2);
 }
 
 .btn-publish,
@@ -130,5 +132,23 @@
     .btn-form2:hover{
         opacity: 1;
     }
+}
+
+.foot-newuser-img{
+    background-color: var(--background);
+    @extend %shadow;
+    padding: space(1.5) space(1.5);
+    border-radius: 5px;
+    width: 240px;
+    overflow: hidden;
+    margin-bottom: space(2);
+}
+
+.newuser-wrap{
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: spac(3);
+    width: 100%;
+    transform: translateY(-33px);
 }
 

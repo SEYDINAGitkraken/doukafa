@@ -21,7 +21,7 @@
     --background: #fff;
     
     --background-default: #e5e8fa;
-    --background-default-aside: #06183d;
+    --background-default-aside: #e4e5f1;
     --color-default-aside:#1547b4;
     --color-default:#0c0618;
     --contrast-default: #2261e7;
@@ -30,14 +30,14 @@
     --color-cart-default:#68686d;
     --background-cart-default:#eef2f8;
 
-    --color-white:#1a191b;
+    --color-white:#19191b;
     --background-white: #eceff3;
     --background-aside-white: #fff;
     --color-aside-white:#7e8085;
     --border-white:#9b9ba3;
     --color-cart-white:#6e6e70;
     --background-cart-white:#ffffff;
-    --contrast-white: #434447 ;
+    --contrast-white: #121314 ;
     --contrast-background-white: #d2d3da;
 
     --color-black:#1a191b;
@@ -176,6 +176,7 @@ con-fetti {
 @import 'modules/histoSale';
 @import 'modules/saleTotal';
 @import 'modules/statFidelity';
+@import 'modules/menusofday';
 
 // Admin style
 // ==================

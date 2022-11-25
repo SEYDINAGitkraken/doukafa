@@ -26,6 +26,10 @@ const HistoSale = () => {
     const options = { 
         fillColor: 'rgba(98, 20, 201, 0.719)', 
         strokeColor: 'rgba(98, 20, 201, 0.119)',
+        responsive: true,
+        interaction: {
+            intersect: false,
+        },
         scales:{
             x:{
                 grid:{
@@ -48,14 +52,21 @@ const HistoSale = () => {
             backgroundColor: "rgb(50, 110, 240)",
             borderColor: "rgb(16, 72, 190)",
             data: [0, 10, 5, 2, 20, 30, 45],
-          }
+            borderRadius: {
+                topLeft:5,
+                topRight:5
+              },
+              borderSkipped: false,
+              maxBarThickness: 18,
+          },
+
         ],
     };
 
     return (
         <div className="container">
             <div className="card">
-                <h1 className="title">Menu du jour</h1>
+                <h1 className="title">Vente de periode</h1>
                 <Bar options={options} data={data}  />
             </div>
             

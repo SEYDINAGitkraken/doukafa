@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { formatToMoney } from "../../../../Utils/FormatNumber";
 import Icon from "../../../Icon";
 import img from "../../../../assets/images/29.jpg"
+import { MENUS } from "../../../../settings/constants";
 
 const ListingMenu = () => {
 
@@ -84,7 +85,7 @@ const ListingMenu = () => {
                             <td><span className={handleCLassName('Complete')} >Disponible</span></td>
                             <td>
                                 <div className="table-action">
-                                    <Link to="" className="listing-link listing-add">
+                                    <Link to={MENUS+'-1'} className="listing-link listing-add">
                                         <Icon name="edit"/>
                                     </Link>
                                     <Link to='' className="listing-link listing-edit btn-edit" >
@@ -105,7 +106,7 @@ const ListingMenu = () => {
                             <td><span className={handleCLassName('Complete')} >Disponible</span></td>
                             <td>
                                 <div className="table-action">
-                                    <Link to="" className="listing-link listing-add">
+                                    <Link to={MENUS+'-2'} className="listing-link listing-add">
                                         <Icon name="edit"/>
                                     </Link>
                                     <Link to='' className="listing-link listing-edit btn-edit" >
@@ -126,7 +127,7 @@ const ListingMenu = () => {
                             <td><span className={handleCLassName('Complete')} >Disponible</span></td>
                             <td>
                                 <div className="table-action">
-                                    <Link to="" className="listing-link listing-add">
+                                    <Link to={MENUS+'-3'} className="listing-link listing-add">
                                         <Icon name="edit"/>
                                     </Link>
                                     <Link to='' className="listing-link listing-edit btn-edit" >

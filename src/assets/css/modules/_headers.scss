@@ -100,7 +100,8 @@
 .notif-toggle-body{
     padding: space(.5);
     display: grid;
-    grid-template-columns: 45px 1fr;
+    grid-template-columns: 60px 1fr;
+    gap: space(.5);
     border-bottom: 1px solid var(--border);
     transition: var(--during);
 }
@@ -108,14 +109,12 @@
     background-color: #0002;
 }
 .notives-img{
-    background-color: var(--border);
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 35px;
+    width: 60px;
     color: var(--color-cart);
+    margin-right: 30px;
 }
 
 .notif-toggle-foot{

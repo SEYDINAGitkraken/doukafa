@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { CUSTOMER } from "../../../../settings/constants";
 import { formatToPhone } from "../../../../Utils/FormatNumber";
 import Icon from "../../../Icon";
 
@@ -82,7 +83,7 @@ const ListingCustomer = () => {
                                 <td><span className={handleCLassName('Cancelled')} >Cancelled</span></td>
                                 <td>
                                     <div className="table-action">
-                                        <Link to="" className="listing-link listing-add">
+                                        <Link to={CUSTOMER+'-1'} className="listing-link listing-add">
                                             <Icon name="edit"/>
                                         </Link>
                                         <Link to='' className="listing-link listing-edit btn-edit" >
@@ -102,7 +103,7 @@ const ListingCustomer = () => {
                                 <td><span className={handleCLassName('Cancelled')} >Cancelled</span></td>
                                 <td>
                                     <div className="table-action">
-                                        <Link to="" className="listing-link listing-add">
+                                        <Link to={CUSTOMER+'-2'} className="listing-link listing-add">
                                             <Icon name="edit"/>
                                         </Link>
                                         <Link to='' className="listing-link listing-edit btn-edit" >

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { CUSTOMER } from "../../../../settings/constants";
+import { formatToPhone } from "../../../../Utils/FormatNumber";
 import Icon from "../../../Icon";
 
 
@@ -42,77 +44,99 @@ const ListCustomer = () => {
 
 
     return (
-        <div className="listing card">
-            <h1 className="title">Listes des clients</h1>
-            <div className="listing-head">
-                <div className="listing-show">
-                    <form action="" className="form">
-                        <label htmlFor="show" className="listing-label">Show</label>
-                        <select name="" id="show" className="listing-select">
-                            <option value="5">5 rows</option>
-                            <option value="10">10 rows</option>
-                            <option value="15">15 rows</option>
-                            <option value="20">20 rows</option>
-                            <option value="30">30 rows</option>
-                        </select>
-                    </form>
+        <>
+            <div className="listing card">
+                <h1 className="title">Listes des clients</h1>
+                <div className="listing-head">
+                    <div className="listing-show">
+                        <form action="" className="form">
+                            <label htmlFor="show" className="listing-label">Show</label>
+                            <select name="" id="show" className="listing-select">
+                                <option value="5">5 rows</option>
+                                <option value="10">10 rows</option>
+                                <option value="15">15 rows</option>
+                                <option value="20">20 rows</option>
+                                <option value="30">30 rows</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div>
+                        
+                    </div>
                 </div>
-                <div>
-                    
+                <div className="listing-body">
+                    <table className="listing-table">
+                        <thead className="listing-thead">
+                            <tr>
+                                <th>#</th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Téléphone</th>
+                                <th>Fidelité</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody className="listing-tbody">
+                            <tr>
+                                <td>1</td>
+                                <td>Djo</td>
+                                <td>Bola</td>
+                                <td>{formatToPhone(Number('99844476'))}</td>
+                                <td><span className={handleCLassName('Cancelled')} >Cancelled</span></td>
+                                <td>
+                                    <div className="table-action">
+                                        <Link to={CUSTOMER+'-1'} className="listing-link listing-add">
+                                            <Icon name="edit"/>
+                                        </Link>
+                                        <Link to='' className="listing-link listing-edit btn-edit" >
+                                            <Icon name="check"/>
+                                        </Link>
+                                        <span className="listing-link listing-del btn-del" onClick={() =>{handleDelete(3)}} >
+                                            <Icon name="del"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Tièkura</td>
+                                <td>Taama</td>
+                                <td>{formatToPhone(Number('70232420'))}</td>
+                                <td><span className={handleCLassName('Cancelled')} >Cancelled</span></td>
+                                <td>
+                                    <div className="table-action">
+                                        <Link to={CUSTOMER+'-2'} className="listing-link listing-add">
+                                            <Icon name="edit"/>
+                                        </Link>
+                                        <Link to='' className="listing-link listing-edit btn-edit" >
+                                            <Icon name="check"/>
+                                        </Link>
+                                        <span className="listing-link listing-del btn-del" onClick={() =>{handleDelete(3)}} >
+                                            <Icon name="del"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
                 </div>
+                <div className="listing-foot">
+                    <div>
+                        <button className="btn btn-listing">Preview</button>
+                    </div>
+                    <div className="foot-middle">
+                        <div>Page</div>
+                        <div><input type="number" name="age" id="age" min="1" max="10" step="2" className="listing-rang"/></div>
+                        <div>Of 5</div>
+                    </div>
+                    <div>
+                        <button className="btn btn-listing">Preview</button>
+                    </div>
+                </div>
+                <ToastContainer />
             </div>
-            <div className="listing-body">
-                <table className="listing-table">
-                    <thead className="listing-thead">
-                        <tr>
-                            <th>#</th>
-                            <th>Date</th>
-                            <th>Abonnés</th>
-                            <th>Prix (Fr)</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="listing-tbody">
-                        <tr>
-                            <td>1</td>
-                            <td>Saturday, February 3rd, 2018</td>
-                            <td>abonné 1</td>
-                            <td>50 000</td>
-                            <td><span className={handleCLassName('Cancelled')} >Cancelled</span></td>
-                            <td>
-                                <div className="table-action">
-                                    <Link to="" className="listing-link listing-add">
-                                        <Icon name="edit"/>
-                                    </Link>
-                                    <Link to='' className="listing-link listing-edit btn-edit" >
-                                        <Icon name="check"/>
-                                    </Link>
-                                    <span className="listing-link listing-del btn-del" onClick={() =>{handleDelete(3)}} >
-                                        <Icon name="del"/>
-                                    </span>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    
-                </table>
-            </div>
-            <div className="listing-foot">
-                <div>
-                    <button className="btn btn-listing">Preview</button>
-                </div>
-                <div className="foot-middle">
-                    <div>Page</div>
-                    <div><input type="number" name="age" id="age" min="1" max="10" step="2" className="listing-rang"/></div>
-                    <div>Of 5</div>
-                </div>
-                <div>
-                    <button className="btn btn-listing">Preview</button>
-                </div>
-            </div>
-            <ToastContainer />
-        </div>
+        </>
     )
 }
 

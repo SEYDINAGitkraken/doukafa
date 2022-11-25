@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import FormCheckbox from "../../../Forms/FormCheckbox";
+import FormInput from "../../../Forms/FormInput";
 import FormTextArea from "../../../Forms/FormTextArea";
 import Icon from "../../../Icon";
+import img from "../../../../assets/images/29.jpg"
+
 
 const FormMenu = ({id, link}) => {
 
@@ -36,7 +39,7 @@ const FormMenu = ({id, link}) => {
             const promise = APIFetch({
                 headers:{'Content-Type': 'application/json'},
                 BASEURL: 'http://localhost:9000/api/o',
-                PATH_SEARCH: 'personnels/create',
+                PATH_SEARCH: link,
                 PATH_METHOD: 'POST',
                 formData
             })
@@ -141,80 +144,96 @@ const FormMenu = ({id, link}) => {
 
 
     return (
-        <section className="section-newuser">
-            <form action="" className="form-newuser" onSubmit={handleSubmit}>
-                <div  className="newuser-items ">
-                    <div className="form-content">
-                        <div className="form-wrap">
-                            <FormInput
-                                placeholder="Nom"
-                                type = "text"
-                                value={name}
-                                onChange={ e => setName(e.target.value) }
-                            >
-                                <Icon name='edit'/>
-                            </FormInput>
-                            <FormInput
-                                placeholder="Prix"
-                                type = "text"
-                                value={platform}
-                                onChange={ e => setPlatform(e.target.value) }
-                            >
-                                <Icon name='money'/>
-                            </FormInput>
+        <>
+            <section className="section-newuser">
+                <form action="" className="form-newuser" onSubmit={handleSubmit}>
+                        <div  className="newuser-items ">
+                            <div className="form-content">
+                                <div className="form-wrap">
+                                    <FormInput
+                                        placeholder="Nom"
+                                        type = "text"
+                                        value={name}
+                                        onChange={ e => setName(e.target.value) }
+                                    >
+                                        <Icon name='edit'/>
+                                    </FormInput>
+                                    <FormInput
+                                        placeholder="Prix"
+                                        type = "text"
+                                        value={platform}
+                                        onChange={ e => setPlatform(e.target.value) }
+                                    >
+                                        <Icon name='money'/>
+                                    </FormInput>
+                                </div>
+                                
+                                <div className="form-toggle">
+                                    <FormTextArea cols="30" rows="5"
+                                        value={description}
+                                        onChange={e=>setDescription(e.target.value)}
+                                    >   
+                                    </FormTextArea>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="newuser-items">
+                            <div className="newuser-item">
+                                <div className="head-newuser">
+                                    <h3>Enrégistrement</h3>
+                                </div>
+                                
+                                <div className="foot-newuser">
+                                    <button className="btn-save btn">Enregister</button>
+                                    <button className="btn-publish btn">Publié</button>
+                                </div>
+                            </div>
+                            
+                            <div className="newuser-item">
+                                <div className="head-newuser">
+                                    <h3>Catégories</h3>
+                                </div>
+                                <div className="body-newuser newuser-spacing">
+                                    <FormCheckbox 
+                                        label= 'Midi'
+                                        onChange={e => handleOption(e)}
+                                        name = 'midi'
+                                    />
+                                    <FormCheckbox 
+                                        label = 'Boisson'
+                                        name = 'boissont' 
+                                        onChange={e => handleOption(e)}
+                                    />
+                                </div>
+                                
+                            </div>
+                            
                         </div>
                         
-                        <div className="form-toggle">
-                            <FormTextArea cols="30" rows="5"
-                                value={description}
-                                onChange={e=>setDescription(e.target.value)}
-                            >   
-                            </FormTextArea>
-                        </div>
-                    </div>
-                </div>
-                <div className="newuser-items">
-                    <div className="newuser-item">
-                        <div className="head-newuser">
-                            <h3>Enrégistrement</h3>
-                        </div>
-                        
-                        <div className="foot-newuser">
-                            <button className="btn-save btn">Enregister</button>
-                            <button className="btn-publish btn">Publié</button>
-                        </div>
-                    </div>
-                    <div className="newuser-item ">
-                        <div className="head-newuser">
-                            <h3>Fonctions</h3>
-                        </div>
-                        <div className="body-newuser newuser-spacing">
-                            <FormCheckbox 
-                                label= 'Midi'
-                                onChange={e => handleOption(e)}
-                                name = 'midi'
-                            />
-                            <FormCheckbox 
-                                label = 'Boisson'
-                                name = 'boissont' 
-                                onChange={e => handleOption(e)}
-                            />
-                        </div>
-                        
-                    </div>
-                </div>
-            </form>
+                    </form>
 
-            <div className="foot-newuser form-thow">
-                <form action="" className="newuser-form2" onSubmit={handleSubmitOp} >
-                    <div className="form2-group">
-                        <input type="text" className="form2-input" placeholder="catégorie" onChange={e =>setNameOp(e.target.name)} />
-                        <button className="btn-form2"> <Icon name="plus"  /> </button>
-                   </div>
-                </form>
-           </div>
-           <ToastContainer />
-        </section>
+                <div className="foot-newuser form-thow">
+                    <form action="" className="newuser-form2" onSubmit={handleSubmitOp} >
+                        <div className="form2-group">
+                            <input type="text" className="form2-input" placeholder="catégorie" onChange={e =>setNameOp(e.target.name)} />
+                            <button className="btn-form2"> <Icon name="plus"  /> </button>
+                        </div>
+                    </form>
+                </div>
+                
+                
+                
+            
+            <ToastContainer />
+            </section>
+            
+            {id && (<div className="newuser-wrap">
+                <div></div>
+                <div className="foot-newuser-img">
+                    <img src={img} alt="" />
+                </div>
+            </div>)}
+        </>
     )
 }
 

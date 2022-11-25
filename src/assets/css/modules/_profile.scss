@@ -1,9 +1,10 @@
 .wrap-profile{
+    @extend %shadow;
     border: 1px solid var(--border);
     margin-top: space(2);
     background: var(--background);
     border-radius: 5px;
-    @extend %shadow;
+    
     overflow: hidden;
 }
 .wrap-profile-head{
@@ -42,22 +43,34 @@
 .wrapper-profile{
     display: grid;
     grid-template-columns: 1fr 350px;
-    grid-gap: space(2);
+    gap: space(2);
 }
+.wrap-profile-body{
+    position: relative;
+}
+
 .profile-head-item{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: -80px;
+    right: 40px;
 }
 .upload-file{
     margin-top: space(.5);
 }
+.btn-padding{
+    padding-left: space(2);
+}
 .profile-view-img{
+    @extend %shadow;
     border: 1px solid var(--border);
     overflow: hidden;
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    border-radius: 5px;
+    
 }
 .form-wrap-foot{
     display:  grid;
